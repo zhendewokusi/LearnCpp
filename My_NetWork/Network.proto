@@ -1,0 +1,27 @@
+//确定使用的proto版本
+//在本地使用protoc --version查看
+syntax = "proto3";
+
+//定义包名,这里filetransfer(文件传输)
+package filetransfer;
+
+
+/*文件请求发送给服务端，并等待服务端的响应。服务端接收到文件请求后，可以执行相应的操作，并将处理结果包装成FileResponse消息返回给客户端*/
+service FileTransfer{
+    rpc SendFile(FileRequest) returns(FileResponse);
+}
+
+//包含一个字段,类型为"字节流"
+/*这个消息类型表示一个文件请求，其中content字段用于存储文件的内容。bytes类型可以容纳任意二进制数据，适用于传输文件或其他二进制信息。*/
+message FileRequest {
+//该字段的编号为1
+bytes content = 1;
+}
+
+
+
+//它包含一个字段success，类型为bool
+message FileResponse {
+//该字段的编号为1,表示请求成功或失败
+bool success = 1;
+}

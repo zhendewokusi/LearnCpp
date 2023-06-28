@@ -1,0 +1,4 @@
+/home/yuanfang/miscellaneous/netplan/Network/build/CMakeFiles/client.out.dir
+/home/yuanfang/miscellaneous/netplan/Network/build/CMakeFiles/server.out.dir
+/home/yuanfang/miscellaneous/netplan/Network/build/CMakeFiles/edit_cache.dir
+/home/yuanfang/miscellaneous/netplan/Network/build/CMakeFiles/rebuild_cache.dir
