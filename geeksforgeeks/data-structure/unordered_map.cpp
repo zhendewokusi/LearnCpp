@@ -1,27 +1,15 @@
-// C++ program to demonstrate
-// functionality of unordered_map
 #include <iostream>
 #include <unordered_map>
-using namespace std;
 
-// Driver code
-int main()
-{
-// Declaring umap to be of
-// <string, int> type key
-// will be of STRING type
-// and mapped VALUE will
-// be of int type
-unordered_map<string, int> umap;
+int main(){
+	std::unordered_map<std::string,int> my_map;
+	my_map["YuanFang"] = 18;
+	my_map["Math"] = 99;
+	my_map["yuanfang"] = 18;
+	my_map["awa	"] = 66;
+	my_map["dhwuahgdwa"] = 64164;
+	for(auto x: my_map ){
+		std::cout << x.first<< std::endl;
+	}
 
-// inserting values by using [] operator
-umap["GeeksforGeeks"] = 10;
-umap["Practice"] = 20;
-umap["Contribute"] = 30;
-
-// Traversing an unordered map
-for (auto x : umap)
-	// cout << x.first << " " <<
-			// x.second << endl;
-    cout << x.first << std::endl;
 }
