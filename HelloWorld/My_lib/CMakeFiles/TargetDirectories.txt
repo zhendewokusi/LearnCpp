@@ -1,7 +1,0 @@
-/home/yuanfang/Desktop/learncpp/HelloWorld/My_lib/CMakeFiles/mylib.dir
-/home/yuanfang/Desktop/learncpp/HelloWorld/My_lib/CMakeFiles/edit_cache.dir
-/home/yuanfang/Desktop/learncpp/HelloWorld/My_lib/CMakeFiles/rebuild_cache.dir
-/home/yuanfang/Desktop/learncpp/HelloWorld/My_lib/CMakeFiles/list_install_components.dir
-/home/yuanfang/Desktop/learncpp/HelloWorld/My_lib/CMakeFiles/install.dir
-/home/yuanfang/Desktop/learncpp/HelloWorld/My_lib/CMakeFiles/install/local.dir
-/home/yuanfang/Desktop/learncpp/HelloWorld/My_lib/CMakeFiles/install/strip.dir

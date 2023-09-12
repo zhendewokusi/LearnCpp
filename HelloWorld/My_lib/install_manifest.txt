@@ -1,3 +1,0 @@
-/usr/local/lib/libmylib.so.1.0
-/usr/local/lib/libmylib.so
-/usr/local/include/mylib_base.h
