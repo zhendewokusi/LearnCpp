@@ -1,23 +1,50 @@
-#include <stdio.h>
+#include <iostream>
 #include <memory>
-#include <utility>
+#include <vector>
 
-int main() {
-    int n[10];
-    int i = 0; 
-    while (i < 10 && scanf("%d", &n[i]) != EOF) {
-        i++; // 移动到数组的下一个位置
+int test1() {
+    auto upv =
+        std::make_unique<std::vector<int>>(std::initializer_list<int>{10, 20});
+    auto initlist = {10, 20};
+    auto spv = std::make_shared<std::vector<int>>(initlist);
+    
+    std::cout << "std::unique_ptr elements: ";
+    for (const auto& element : *upv) {
+        std::cout << element << " ";
     }
-    // 输出数组中的数据
-    for (int j = 0; j < i; j++) {
-        printf("%d ", n[j]);
+    std::cout << std::endl;
+
+    std::cout << "std::shared_ptr elements: ";
+    for (const auto& element : *spv) {
+        std::cout << element << " ";
     }
+    std::cout << std::endl;
 
     return 0;
 }
 
-template<typename T,typename... Ts>
-std::unique_ptr<T> make_unique(Ts&&...params)
-{
-    return std::unique_ptr<T>(new T(std::forward<Ts>(params)...));
+int test2() {
+    auto upv = std::make_unique<std::vector<int>>(10, 20);
+    auto spv = std::make_shared<std::vector<int>>(10, 20);
+
+    std::cout << "std::unique_ptr elements: ";
+    for (const auto& element : *upv) {
+        std::cout << element << " ";
+    }
+    std::cout << std::endl;
+
+    std::cout << "std::shared_ptr elements: ";
+    for (const auto& element : *spv) {
+        std::cout << element << " ";
+    }
+    std::cout << std::endl;
+
+    return 0;
+}
+int main() {
+    // 创建 std::initializer_list 型别的对象
+    auto initlist = {10, 20};
+    auto spv = std::make_shared<std::vector<int>>(initlist);
+    test1();
+    test2();
 }
