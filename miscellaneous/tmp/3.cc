@@ -1,3 +1,4 @@
+#include <iostream>
 #include <string>
 using namespace std;
 
@@ -15,6 +16,7 @@ public:
             }
             next[i] = j;
         }
+    
     }
     int strStr(string haystack, string needle) {
         if (needle.size() == 0) {
@@ -37,3 +39,14 @@ public:
         return -1;
     }
 };
+
+int main()
+{
+    string tmp = {"abcdabcde"};
+    int arr[9] = {0};
+    Solution s;
+    s.getNext(arr, tmp);
+    for(int element:arr){
+        std::cout << element  << " " ;
+    }
+}
