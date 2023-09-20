@@ -1,42 +1,35 @@
 #include <iostream>
 #include <string>
+#include <vector>
 
 using namespace std;
 
-// 暴力破解字符串匹配函数
-int bruteForceSearch(const string& text, const string& pattern) {
-    int textLength = text.length();
-    int patternLength = pattern.length();
+void computeNextBruteForce(int* next, const string& s) {
+    int length = s.size();
 
-    for (int i = 0; i <= textLength - patternLength; i++) {
-        int j;
-
-        // 逐个字符比较主串和模式串
-        for (j = 0; j < patternLength; j++) {
-            if (text[i + j] != pattern[j]) {
-                break;  // 如果有不匹配的字符，跳出内循环
+    for (int i = 0; i < length; i++) {
+        int j = 0;  // 将 j 从0开始
+        while (j < i) {
+            if (s.substr(0, j + 1) == s.substr(i - j, j + 1)) {
+                j++;
+            } else {
+                break;
             }
         }
-
-        // 如果内循环完整执行，表示找到匹配
-        if (j == patternLength) {
-            return i;  // 返回匹配的位置
-        }
+        next[i] = j + 1;
     }
-
-    return -1; // 未找到匹配
 }
 
 int main() {
-    string text = "This is a sample text for string matching.";
-    string pattern = "sample";
+    string pattern = "ababcababc";
+    int patternLength = pattern.size();
+    int next[patternLength];
 
-    int result = bruteForceSearch(text, pattern);
+    computeNextBruteForce(next, pattern);
 
-    if (result != -1) {
-        cout << "Pattern found at position: " << result << endl;
-    } else {
-        cout << "Pattern not found in the text." << endl;
+    cout << "Partial Match Table (Next Array):" << endl;
+    for (int i = 0; i < patternLength; i++) {
+        cout << "next[" << i << "] = " << next[i] << endl;
     }
 
     return 0;

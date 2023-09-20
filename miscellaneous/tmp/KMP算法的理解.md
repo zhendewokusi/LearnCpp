@@ -103,6 +103,44 @@ int main() {
 5. 当回溯到模式串的起始位置（下标0），而且在此之前没有找到任何匹配，这意味着在当前主串位置没有找到与模式串匹配的字符序列。在这种情况下，应该继续将主串中的匹配位置向右移动一位，并从模式串的起始位置（下标0）重新开始匹配。
 这个过程会持续到找到匹配字符串或者进行到主串剩余长度小于模式串时返回没找到匹配字符串
 
+### KMP算法具体代码的逻辑
+
+#### 计算部分匹配表
+标准的KMP算法中用于计算部分匹配表的方法:
+```cpp
+    void getNext(int* next, const string& s) {
+        int j = 0;
+        next[0] = 0;
+        for(int i = 1; i < s.size(); i++) {
+            while (j > 0 && s[i] != s[j]) {
+                j = next[j - 1];
+            }
+            if (s[i] == s[j]) {
+                j++;
+            }
+            next[i] = j;
+        }
+        
+    }
+```
+我刚开始写的
+```cpp
+void getNextBruteForce(int* next, const string& s) {
+    int length = s.size();
+
+    for (int i = 0; i < length; i++) {
+        int j = 0;  // 每次从头开始
+        while (j < i) {
+            if (s.substr(0, j + 1) == s.substr(i - j, j + 1)) {
+                j++;
+            } else {
+                break;
+            }
+        }
+        next[i] = j + 1;
+    }
+}
+```
 
 
 
