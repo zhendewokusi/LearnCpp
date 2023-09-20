@@ -16,7 +16,7 @@ public:
             }
             next[i] = j;
         }
-    
+        
     }
     int strStr(string haystack, string needle) {
         if (needle.size() == 0) {
@@ -42,8 +42,8 @@ public:
 
 int main()
 {
-    string tmp = {"abcdabcde"};
-    int arr[9] = {0};
+    string tmp = {"aabaabaaf"};
+    int arr[22] = {0};
     Solution s;
     s.getNext(arr, tmp);
     for(int element:arr){
