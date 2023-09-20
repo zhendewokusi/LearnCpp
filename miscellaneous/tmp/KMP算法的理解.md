@@ -129,7 +129,7 @@ void getNextBruteForce(int* next, const string& s) {
     int length = s.size();
 
     for (int i = 0; i < length; i++) {
-        int j = 0;  // 每次从头开始
+        int j = 0;
         while (j < i) {
             if (s.substr(0, j + 1) == s.substr(i - j, j + 1)) {
                 j++;
@@ -141,6 +141,9 @@ void getNextBruteForce(int* next, const string& s) {
     }
 }
 ```
+我写的函数是进行暴力破解的方法计算部分匹配表，很拉。着重解释一下我看标准的KMP算法中用于计算部分匹配表的方法时遇见的问题
+困扰我许久的就是“j = next[j - 1];”。
+
 
 
 

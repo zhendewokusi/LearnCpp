@@ -42,7 +42,7 @@ public:
 
 int main()
 {
-    string tmp = {"aabaabaaf"};
+    string tmp = {"aabaabaafaabaab"};
     int arr[22] = {0};
     Solution s;
     s.getNext(arr, tmp);
