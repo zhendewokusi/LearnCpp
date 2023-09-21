@@ -1,3 +1,4 @@
+#include <cstdio>
 #include <iostream>
 #include <string>
 using namespace std;
@@ -42,11 +43,13 @@ public:
 
 int main()
 {
-    string tmp = {"aabaabaafaabaab"};
-    int arr[22] = {0};
-    Solution s;
-    s.getNext(arr, tmp);
-    for(int element:arr){
-        std::cout << element  << " " ;
-    }
+    // string tmp = {"aabaabaafaabaab"};
+    // int arr[22] = {0};
+    // Solution s;
+    // s.getNext(arr, tmp);
+    // for(int element:arr){
+    //     std::cout << element  << " " ;
+    // }
+    int a = 1;
+    printf("%d %d %d %d %d",a++,++a,++a,++a,a++);
 }
