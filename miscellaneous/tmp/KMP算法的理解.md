@@ -143,10 +143,6 @@ void getNextBruteForce(int* next, const string& s) {
 ```
 我写的函数是进行暴力破解的方法计算部分匹配表，很拉。着重解释一下我看标准的KMP算法中用于计算部分匹配表的方法时遇见的问题
 困扰我许久的就是“j = next[j - 1];”。
-
-
-
-
-
-
+ 
+为什么是j = next[j-1]
 
