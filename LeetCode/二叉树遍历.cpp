@@ -119,3 +119,36 @@ vector<int> inorderTraversal(TreeNode* root) {
         reverse(result.begin(),result.end());
         return result;
     }
+
+
+
+
+// 统一的迭代法
+class Solution {
+public:
+    vector<int> inorderTraversal(TreeNode* root) {
+        vector<int> result;
+        stack<TreeNode*> stack;
+        if(root != nullptr) stack.push(root);
+        while(!stack.empty()){
+            TreeNode * node = stack.top();
+            stack.pop();
+            if(node != nullptr){
+                //只需要更改这三个顺序就可以改变遍历方式
+
+                // 右
+                if(node->right) stack.push(node->right);
+                // 中
+                stack.push(node);
+                stack.push(nullptr);
+                // 左
+                if(node->left) stack.push(node->left);
+            }else{
+                node = stack.top();
+                stack.pop();
+                result.push_back(node->val);
+            }
+        }
+        return result;
+    }
+};
