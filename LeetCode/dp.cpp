@@ -11,8 +11,8 @@ int rob(vector<int>& nums) {
     function<int(int)> dfs = [&](int index) ->int {
         if(index < 0)   return 0;
         // 选或者不选
-        if(hash[index] == -1)
-        hash[index] = max(dfs(index - 1),dfs(index - 2) + nums[index]);
+            if(hash[index] == -1)
+            hash[index] = max(dfs(index - 1),dfs(index - 2) + nums[index]);
         return hash[index];
         // return max(dfs(index - 1),dfs(index - 2) + nums[index]);
     };  
